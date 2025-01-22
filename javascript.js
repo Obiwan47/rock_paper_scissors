@@ -7,7 +7,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
 
-    const player = prompt("Ingrese su jugada (ROCK - PAPER - SCISSORS)");
+    const player = prompt("Enter your move (ROCK - PAPER - SCISSORS)");
     return player.toUpperCase();
 }
 
@@ -26,7 +26,7 @@ function playRound(computerChoice, humanChoice) {
     ) {
 
         humanScore++;
-        console.log("You Win");
+        console.log("You Win!!!");
 
     } else {
         if (
@@ -36,8 +36,8 @@ function playRound(computerChoice, humanChoice) {
 
         ) {
             computerScore++;
-            console.log("You Lose");
-            
+            console.log("You Lose!!!");
+
         } else {
             console.log("Invalid entry");
         }
@@ -46,16 +46,29 @@ function playRound(computerChoice, humanChoice) {
 
 }
 
+function playGame() {
+    
+    const computerSelection = (getComputerChoice());
+    const humanSelection = (getHumanChoice());
+
+    console.log('Computer: ' + computerSelection);
+    console.log('Player: ' + humanSelection);
+
+    playRound(computerSelection, humanSelection);
+
+    console.log('Player score:' + humanScore);
+    console.log('Computer score: ' + computerScore);
+
+}
+
+
+// Main program
+
 let humanScore = 0;
 let computerScore = 0;
 
-const computerSelection = (getComputerChoice());
-const humanSelection = (getHumanChoice());
+for (let i = 0; i < 5; i++) {
+    
+    playGame();
 
-console.log('Computadora: ' + computerSelection);
-console.log('Jugador: ' + humanSelection);
-
-playRound(computerSelection, humanSelection);
-
-console.log('Player score:' + humanScore);
-console.log('Computer score: ' + computerScore);
+}
