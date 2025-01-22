@@ -29,9 +29,18 @@ function playRound(computerChoice, humanChoice) {
         console.log("You Win");
 
     } else {
+        if (
+            (computerChoice === "ROCK" && humanChoice === "SCISSORS") ||
+            (computerChoice === "PAPER" && humanChoice === "ROCK") ||
+            (computerChoice === "SCISSORS" && humanChoice === "PAPER")
 
-        computerScore++;
-        console.log("You Lose");
+        ) {
+            computerScore++;
+            console.log("You Lose");
+            
+        } else {
+            console.log("Invalid entry");
+        }
 
     }
 
